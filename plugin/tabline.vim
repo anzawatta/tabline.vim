@@ -27,14 +27,14 @@ function! Tabline()
 
     let s .= '%' . tab . 'T'
     let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-    let s .= ' ' . tab .' '
+    let s .= '|' . tab .' '
     let s .= (bufname != '' ? fnamemodify(bufname, ':t') : '[No Name]')
 
     if bufmodified
       let s .= '*'
     endif
 
-    let s .= ' '
+    let s .= '  '
   endfor
 
   let s .= '%#TabLineFill#'
